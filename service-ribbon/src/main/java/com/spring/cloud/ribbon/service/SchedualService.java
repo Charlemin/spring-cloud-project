@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "eureka-client")
+@FeignClient(value = "eureka-client", fallback = SchedualServiceHystric.class)
 public interface SchedualService {
 
     @RequestMapping(value = "/index/test",method = RequestMethod.GET)
